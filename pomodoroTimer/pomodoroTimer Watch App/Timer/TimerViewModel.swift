@@ -38,4 +38,19 @@ class TimerViewModel: ObservableObject {
             }
         }
     }
+    
+    func pauseTimer() {
+        
+        timer?.invalidate()
+        timer = nil
+        isTimerRunning = false
+    }
+    
+    func resetTimer() {
+        
+        timer?.invalidate()
+        timer = nil
+        timerValue = 4
+        isTimerRunning = false
+    }
 }
