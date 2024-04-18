@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TimerView: View {
     
+    @StateObject var viewModel = TimerViewModel()
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -19,15 +21,14 @@ struct TimerView: View {
                     .font(.title3)
                     .padding()
                 
-                //  Text(timeString(time: timerValue))
-                Text("25:00")
+                Text(viewModel.getAvailableTimeString(time: viewModel.timerValue))
                     .font(.title)
                     .padding()
                 
                 HStack {
                     
                     timerButton(imageString: "play.circle", action: {
-                        // start
+                        viewModel.startTimer()
                     })
                     
                     timerButton(imageString: "pause.circle", action: {
@@ -40,7 +41,7 @@ struct TimerView: View {
                 }
                 .padding()
                 
-                Text("🍅 completed: 2")
+                Text("🍅 completed: \(viewModel.completedCycles)")
                     .font(.caption)
                     .padding()
             }.frame(width: geometry.size.width, height: geometry.size.height)
@@ -62,6 +63,7 @@ struct TimerView: View {
         .background(Color.pink)
         .clipShape(Circle())
     }
+    
 }
 
 #Preview {
