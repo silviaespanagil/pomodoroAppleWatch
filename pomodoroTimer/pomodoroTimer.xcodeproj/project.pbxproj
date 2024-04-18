@@ -12,6 +12,7 @@
 		A7BF728B2BD13A0100ADB27E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF728A2BD13A0100ADB27E /* ContentView.swift */; };
 		A7BF728D2BD13A0400ADB27E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BF728C2BD13A0400ADB27E /* Assets.xcassets */; };
 		A7BF72902BD13A0400ADB27E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BF728F2BD13A0400ADB27E /* Preview Assets.xcassets */; };
+		A7BF729C2BD1430C00ADB27E /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF729B2BD1430C00ADB27E /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		A7BF728A2BD13A0100ADB27E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A7BF728C2BD13A0400ADB27E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7BF728F2BD13A0400ADB27E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A7BF729B2BD1430C00ADB27E /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		A7BF72872BD13A0100ADB27E /* pomodoroTimer Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				A7BF729A2BD142F800ADB27E /* Timer */,
 				A7BF72882BD13A0100ADB27E /* pomodoroTimerApp.swift */,
 				A7BF728A2BD13A0100ADB27E /* ContentView.swift */,
 				A7BF728C2BD13A0400ADB27E /* Assets.xcassets */,
@@ -92,6 +95,14 @@
 				A7BF728F2BD13A0400ADB27E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A7BF729A2BD142F800ADB27E /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				A7BF729B2BD1430C00ADB27E /* TimerView.swift */,
+			);
+			path = Timer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7BF729C2BD1430C00ADB27E /* TimerView.swift in Sources */,
 				A7BF728B2BD13A0100ADB27E /* ContentView.swift in Sources */,
 				A7BF72892BD13A0100ADB27E /* pomodoroTimerApp.swift in Sources */,
 			);
