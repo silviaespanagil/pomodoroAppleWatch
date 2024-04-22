@@ -51,7 +51,7 @@ class TimerViewModel: ObservableObject {
         
         timer?.invalidate()
         timer = nil
-        timerValue = 4
+        timerValue = 1500
         isTimerRunning = false
     }
     
