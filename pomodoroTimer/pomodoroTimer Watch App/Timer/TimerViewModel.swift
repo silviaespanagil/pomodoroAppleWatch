@@ -53,4 +53,13 @@ class TimerViewModel: ObservableObject {
         timerValue = 4
         isTimerRunning = false
     }
+    
+    func canStartTimer() -> Bool {
+        
+        if timerValue == 0 || isTimerRunning{
+            return false
+        } else {
+            return true
+        }
+    }
 }

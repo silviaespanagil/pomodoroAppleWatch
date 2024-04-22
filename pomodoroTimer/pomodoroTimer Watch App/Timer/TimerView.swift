@@ -27,16 +27,16 @@ struct TimerView: View {
                 
                 HStack {
                     
-                    timerButton(imageString: "play.circle", action: {
+                    timerButton(imageString: "play.circle", disabled: !viewModel.canStartTimer(), action: {
                         viewModel.startTimer()
                     })
                     
-                    timerButton(imageString: "pause.circle", action: {
-                        // pause
+                    timerButton(imageString: "pause.circle", disabled: !viewModel.isTimerRunning, action: {
+                        viewModel.pauseTimer()
                     })
                     
-                    timerButton(imageString: "backward.circle", action: {
-                        // repeat
+                    timerButton(imageString: "backward.circle", disabled: viewModel.isTimerRunning, action: {
+                        viewModel.resetTimer()
                     })
                 }
                 .padding()
@@ -50,6 +50,7 @@ struct TimerView: View {
     
     @ViewBuilder
     func timerButton(imageString: String,
+                     disabled: Bool,
                      action: @escaping () -> Void) -> some View {
         
         Button(action: {
@@ -60,10 +61,10 @@ struct TimerView: View {
                 .font(.title2)
                 .padding()
         }
-        .background(Color.pink)
+        .background(disabled ? Color.gray : Color.pink)
         .clipShape(Circle())
+        .disabled(disabled)
     }
-    
 }
 
 #Preview {
