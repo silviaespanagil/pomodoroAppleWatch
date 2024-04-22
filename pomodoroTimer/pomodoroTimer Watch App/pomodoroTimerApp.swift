@@ -15,6 +15,7 @@ struct pomodoroTimer_Watch_AppApp: App {
         WindowGroup {
             
             ContentView()
+                .accessibilityElement(children: .contain)
         }
     }
 }

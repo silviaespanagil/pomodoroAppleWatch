@@ -13,39 +13,40 @@ struct TimerView: View {
     
     var body: some View {
         
-        GeometryReader { geometry in
+        ScrollView {
             
-            VStack {
+            VStack(spacing: .zero) {
                 
                 Text("Pomodor🍅 Timer")
                     .font(.title3)
-                    .padding()
+                    .padding(.horizontal, 6)
+                    .accessibilityLabel("Pomodoro Timer")
                 
                 Text(viewModel.getAvailableTimeString(time: viewModel.timerValue))
                     .font(.title)
-                    .padding()
+                    .padding(.horizontal, 6)
+                    .accessibilityLabel("Remaining time: \(viewModel.getAvailableTimeString(time: viewModel.timerValue))")
                 
                 HStack {
                     
                     timerButton(imageString: "play.circle", disabled: !viewModel.canStartTimer(), action: {
                         viewModel.startTimer()
-                    })
+                    }).accessibilityLabel("Start timer")
                     
                     timerButton(imageString: "pause.circle", disabled: !viewModel.isTimerRunning, action: {
                         viewModel.pauseTimer()
-                    })
+                    }).accessibilityLabel("Pause timer")
                     
                     timerButton(imageString: "backward.circle", disabled: viewModel.isTimerRunning, action: {
                         viewModel.resetTimer()
-                    })
+                    }).accessibilityLabel("Reset timer")
                 }
-                .padding()
                 
                 Text("🍅 completed: \(viewModel.completedCycles)")
                     .font(.caption)
                     .padding()
-            }.frame(width: geometry.size.width, height: geometry.size.height)
-                .sensoryFeedback(.success, trigger: viewModel.timerValue == 0)
+                    .accessibilityLabel("Completed pomodoros: \(viewModel.completedCycles)")
+            }.sensoryFeedback(.success, trigger: viewModel.timerValue == 0)
         }
     }
     
@@ -65,6 +66,7 @@ struct TimerView: View {
         .background(disabled ? Color.gray : Color.pink)
         .clipShape(Circle())
         .disabled(disabled)
+        .accessibilityElement(children: .combine)
     }
 }
 
