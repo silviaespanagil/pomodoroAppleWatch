@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct pomodoroTimer_Watch_AppApp: App {
+struct pomodoroTimerWatchpApp: App {
     
     var body: some Scene {
         
