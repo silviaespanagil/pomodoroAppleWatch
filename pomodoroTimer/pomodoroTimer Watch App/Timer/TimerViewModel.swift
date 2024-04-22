@@ -11,7 +11,6 @@ class TimerViewModel: ObservableObject {
     
     @Published var timerValue = 1500
     @Published var isTimerRunning = false
-    @Published var isTimerPaused = false
     @Published var completedCycles = 0
     @Published var timer: Timer?
     
@@ -54,7 +53,6 @@ class TimerViewModel: ObservableObject {
         timer = nil
         timerValue = 4
         isTimerRunning = false
-        isTimerPaused = true
     }
     
     func canStartTimer() -> Bool {

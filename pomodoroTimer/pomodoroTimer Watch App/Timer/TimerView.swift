@@ -29,11 +29,11 @@ struct TimerView: View {
                     
                     timerButton(imageString: "play.circle", disabled: !viewModel.canStartTimer(), action: {
                         viewModel.startTimer()
-                    }).sensoryFeedback(.start, trigger: viewModel.isTimerRunning == true)
+                    })
                     
                     timerButton(imageString: "pause.circle", disabled: !viewModel.isTimerRunning, action: {
                         viewModel.pauseTimer()
-                    }).sensoryFeedback(.stop, trigger: viewModel.isTimerPaused == true)
+                    })
                     
                     timerButton(imageString: "backward.circle", disabled: viewModel.isTimerRunning, action: {
                         viewModel.resetTimer()
